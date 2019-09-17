@@ -1,9 +1,9 @@
 # Rippler-flight-analytics
 # Table of Contents
-1. [Flight delay ripple effect]
-2. [Dataset]
-3. [Architecture]
-4. [Web App]
+1. [Flight delay ripple effect](README.md#Flight-delay-ripple-effect)
+2. [Dataset](README.md#Dataset)
+3. [Architecture](README.md#Architecture)
+4. [Web App](README.md#Web-App)
 
 ## Flight delay ripple effect
 
