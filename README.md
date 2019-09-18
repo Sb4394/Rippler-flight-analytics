@@ -17,5 +17,6 @@ Historical Weather data
 Historical Airlines delau data
 
 ## Architecture
+S3->Spark->Postgresql->flask
 
 ## Web App
