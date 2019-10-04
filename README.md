@@ -3,6 +3,7 @@
 
 A web-app for flight delay visualization with all domestic flights in United States
 Using Python Flask. Deployed with gunicorn and nginx. 
+
 Model trained using PySpark Machine learning library
 
 # Table of Contents
