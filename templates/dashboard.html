@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Rippler</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+  <style>
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #D2B4DE;
+  }
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;      
+      font-size: 30px;
+      color: #111;
+  }
+  .container {
+      padding: 80px 120px;
+      text-align:center
+  }
+  .person {
+      
+      margin-bottom: 50px;
+      width: 100%;
+      height: 100%;
+      opacity: 1.0;
+  }
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #56a5e1;
+      color: #bdbdbd;
+      text-align:center;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;color:#fff;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .nbg-1 {
+      background: white;
+      color: #56a5e1;
+  }
+  .nbg-1 h3 {color: #56a5e1;}
+  .nbg-1 p {font-style: italic;color:#56a5e1;}
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #7cb9e8;
+  }
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }  
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #7cb9e8;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #56a5e1 !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .dropbtn {
+    background-color: #56a5e1;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: grey}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #56a5e1;
+}
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  .iframe{
+      text-align: center;
+      width: 200px;
+      display:block;
+      margin:auto;
+  }
+  footer {
+      background-color: #56a5e1;
+      color: white;
+      padding: 32px;
+  }
+  footer a {
+      color: white;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }  
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  form label{
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    color: #fff
+}
+
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">Rippler</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a class="page-scroll" href="#data">STATISTICS</a></li>
+        <li><a class="page-scroll" href="#explore">EXPLORATION</a></li>
+	<li><a class="page-scroll" href="#app">THE APP</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+   
+</div>
+
+
+<!-- Container (The Data Section) -->
+<div id="data" class="bg-1">
+    <div class = "container">
+  <h3 class="text-center">Statistics</h3>
+      <p class="text-center"> From the map shown below one sees that based on the size of circles that certain airports have a higher average delay than others.</p>
+      <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://plot.ly/~saravanabalaji100/2/"></iframe>
+
+    </div>
+</div>
+<div id="explore" class="nbg-1">
+    <div class="container">
+    <h3 class="text-center">Explore Historical Data</h3>
+        {% block explore %}{% endblock %}
+    </div>
+    </div>
+
+<!-- Container (TOUR Section) -->
+<div id="app" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">The Application</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+                        $(function() {
+                          $('a#process_input').bind('click', function() {
+                                $.getJSON('/FindDelay', {
+                                 fldate: $('input[name="fldate"]').val(),
+                                flmonth: $('input[name="flmonth"]').val(),
+                                fldept: $('input[name="fldept"]').val(),
+                                flor: $('input[name="flor"]').val(),
+                                ffdest: $('input[name="ffdest"]').val(),
+                                flnum: $('input[name="flnum"]').val(),
+                                flac: $('input[name="flac"]').val()
+                                }, function(data) {
+                                  $("#result").text(data.result),
+                  $("#prediction").text(data.prediction)
+                  $("#monthfigure").html('<img src="{{ url_for('static', filename='daymonth.png') }}" align="center" alt="daymonth" width="600" height = "500" margin-bottom="50px">'),
+                  $("#flightpath").html('<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~skarthas/46.embed"></iframe>');
+                                });
+                                return false;
+                          });
+                        });
+                </script>
+<p class="text-center">Enter your flight information below to see the estimated delay period</p>
+   
+      <form method='post' action="index">
+          <label for="flnum">Flight Number:</label><input type="number" id="txtflnum" name="flnum" value="6"><br><br>
+          <label for="fldate:">Day:</label><input type="number" id="txtfldate" name="fldate" value="31"><br><br>
+          <label for="flmonth:">Month:</label><input type="number" id="txtflmomth" name="flmonth" value="01"><br><br>
+          <label for="flac">Airline Code:</label><input type="text" id="txtflac" name="flac" value="AA"><br><br>
+          <label for="fldept">Departure hour:</label><input type="number" id="txtfldept" name="fldept" value="17"><br><br>
+          <label for="flor">Departure Airport:</label><input type="text" id="txtflor" name="flor" value="JFK"><br><br>
+          <label for="ffdest">Destination Airport:</label><input type="text" id="txtfldest" name="ffdest" value="ORD"><br><br>
+          
+          
+       <a href = '#' id = process_input><button class="btn btn-lg btn-primary btn-block" type="button">Find Delay</button></a>
+          <p id = result>Please Enter your Flight Information</p>
+          <p id = prediction style="font-size:160%">...</p>
+          
+         <br>
+          <br>
+          
+          <div id = "flightpath"></div>
+
+      
+
+
+
+    
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, $23 per person</label>
+              <input type="number" class="form-control" id="psw" placeholder="How many?">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+              <button type="submit" class="btn btn-block">Pay 
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span> Cancel
+          </button>
+          <p>Need <a href="#">help?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+     
+<div id="googleMap"></div>
+
+<!-- Add Google Maps -->
+<!--<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+
+function initialize() {
+var mapProp = {
+center:myCenter,
+zoom:12,
+scrollwheel:false,
+draggable:false,
+mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+position:myCenter,
+});
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+-->
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP" align = "middle">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p align = "center">Developed using Spark</p> 
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
+
+
