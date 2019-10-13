@@ -27,7 +27,7 @@ Historical Airlines delay data <br />
    source: https://mesonet.agron.iastate.edu/request/
 
 ## Pipeline
-The data is ingested to EC2 instances, unzipped and loaded to S3. 
+The data is ingested to EC2 instance, unzipped and loaded to S3. 
 On Spark, the datasets and combined and the model is trained using Spark MlLib.
 An app is developed using Flaska and plotly is used for the plots
 
