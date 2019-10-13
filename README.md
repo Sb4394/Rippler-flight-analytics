@@ -9,7 +9,7 @@ Model trained using PySpark Machine learning library
 # Table of Contents
 1. [Flight delay ripple effect](README.md#Flight-delay-ripple-effect)
 2. [Dataset](README.md#Dataset)
-3. [Architecture](README.md#Architecture)
+3. [Pipeline](README.md#Architecture)
 4. [Web App](README.md#Web-App)
 
 ## Flight delay ripple effect
@@ -23,10 +23,14 @@ At what point cancelling or delaying a flight further, would mitigate the delay 
 Historical Weather data <br />
    source:https://www.bts.gov/
    
-Historical Airlines delay data   <br />
+Historical Airlines delay data <br />
    source: https://mesonet.agron.iastate.edu/request/download.phtml?network=NY_ASOS#
 
-## Architecture
+## Pipeline
+The data is ingested to EC2 instances, unzipped and loaded to S3. 
+On Spark, the datasets and combined and the model is trained using Spark MlLib.
+An app is developed using Flaska and plotly is used for the plots
+
 <a href="https://drive.google.com/uc?export=view&id=16s0ruRHvLZbXf6ewbD8JGzeBC5j5AZTt"><img src="https://drive.google.com/uc?export=view&id=16s0ruRHvLZbXf6ewbD8JGzeBC5j5AZTt" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
 
 
