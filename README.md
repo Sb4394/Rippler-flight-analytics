@@ -28,6 +28,6 @@ S3->Spark->Postgresql->flask
 
 ## Web App
 Try it out!
-http://ec2-100-25-49-82.compute-1.amazonaws.com:5000/
+http://www.flightrippler.com/
 
 
