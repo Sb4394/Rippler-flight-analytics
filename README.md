@@ -27,7 +27,8 @@ Historical Airlines delay data   <br />
    source: https://mesonet.agron.iastate.edu/request/download.phtml?network=NY_ASOS#
 
 ## Architecture
-<img align="right" width="150" height="100" src="https://drive.google.com/file/d/16s0ruRHvLZbXf6ewbD8JGzeBC5j5AZTt/view?usp=sharing">
+<a href="https://drive.google.com/file/d/16s0ruRHvLZbXf6ewbD8JGzeBC5j5AZTt/view?usp=sharing"><img src="https://drive.google.com/file/d/16s0ruRHvLZbXf6ewbD8JGzeBC5j5AZTt/view?usp=sharing" style="width: 500px; max-width: 100%; height: auto" title="Click for the larger version." /></a>
+
 
 ## Web App
 Try it out!
