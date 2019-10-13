@@ -40,7 +40,7 @@ def main(sc):
     sc._jsc.hadoopConfiguration().set("fs.s3a.secret.key", os.environ["AWS_SECRET_ACCESS_KEY"])
     sc._jsc.hadoopConfiguration().set("fs.s3a.endpoint", "s3.us-east-1.amazonaws.com")
     # Use S3 streaming
-    addr = "s3a://airlineddata/sample.csv"
+    addr = "s3a://sample/sample.csv"
     df=spark_session.read.format('com.databricks.spark.csv').options(header='true', inferschema='true').load(addr)
     df.take(1)
     df.show(5)
