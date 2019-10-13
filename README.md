@@ -27,7 +27,7 @@ Historical Airlines delay data   <br />
    source: https://mesonet.agron.iastate.edu/request/download.phtml?network=NY_ASOS#
 
 ## Architecture
-S3->Spark->Postgresql->flask
+<img align="right" width="150" height="100" src="https://drive.google.com/file/d/16s0ruRHvLZbXf6ewbD8JGzeBC5j5AZTt/view?usp=sharing">
 
 ## Web App
 Try it out!
